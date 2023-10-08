@@ -1,0 +1,23 @@
+module.exports = {
+  apps: [
+    {
+      script: 'next start',
+    },
+  ],
+
+  deploy: {
+    production: {
+      key: 'tokyo.pem',
+      user: 'ubuntu',
+      host: '13.114.237.53',
+      ref: 'origin/main',
+      repo: 'git@github.com:hungdoba/asiatips.git',
+      path: '/home/ubuntu',
+      'pre-deploy-local': '',
+      'post-deploy':
+        'source ~/.nvm/nvm.sh && yarn && yarn build && pm2 reload ecosystem.config.js --env production',
+      'pre-setup': '',
+      ssh_options: 'ForwardAgent=yes',
+    },
+  },
+};

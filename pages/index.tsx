@@ -34,6 +34,7 @@ import Subscribe from '@/components/Subscribe';
 //     props: {
 //       posts: serializedPosts,
 //     },
+//     revalidate: 60 * 60, // 1 hour
 //   };
 // };
 
