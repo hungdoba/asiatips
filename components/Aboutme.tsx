@@ -13,14 +13,12 @@ export default function Aboutme() {
             src="/admin.png"
             alt="Admin logo"
           />
-          <h5 className="mb-1 text-xl font-medium text-gray-900 ">
-            Nguyễn Thái Bình
-          </h5>
+          <h5 className="mb-1 text-xl font-medium text-gray-900 ">Hung Ba</h5>
           <span className="text-sm text-gray-500 mb-2">
             Người thích chia sẻ
           </span>
           <span className="text-sm text-gray-500 ">
-            Đã từng là du học sinh, 4 năm sống ở Nhật
+            Sinh viên Bác Bách Khoa, 4 năm sống ở Nhật
           </span>
           <span className="text-sm text-gray-500">
             Đang là kỹ sư cho một công ty IT
