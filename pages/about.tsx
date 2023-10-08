@@ -22,7 +22,7 @@ export default function About() {
             height={200}
           />
         </div>
-        <h1 className="text-4xl font-bold mt-6"> Nguyễn Thái Bình </h1>
+        <h1 className="text-4xl font-bold mt-6"> Hung Ba </h1>
         <h2 className="text-xl text-gray-500">Kỹ sư IT, blogger</h2>
         <p className="max-w-2xl text-center text-gray-700 mt-4">
           Cảm ơn bạn đã ghé thăm blog của mình!
@@ -33,10 +33,10 @@ export default function About() {
           thông tin hữu ích và sẽ thích thú khi đọc blog của mình hơn.
         </p>
         <p className="max-w-2xl text-center text-gray-700 mt-4">
-          Mình là Bình, sinh năm 1996, sinh ra và lớn lên tại Hà Nội. Sau khi
+          Mình là Hùng, sinh năm 1996, sinh ra và lớn lên tại Hà Nội. Sau khi
           hoàn thành chương trình học tại Đại học Bách khoa Hà Nội, mình đã nhận
           lời mời làm việc của một công ty IT của Nhật và đến Nhật từ năm 2019.
-          Hiện nay, mình đang sinh sống và làm việc tại Tokyo.
+          Hiện nay, mình đang sinh sống và làm việc tại Chiba.
         </p>
         <p className="max-w-2xl text-center text-gray-700 mt-4">
           Mình đã ở Nhật được 4 năm, không quá dài cũng không quá ngắn. Trải qua
