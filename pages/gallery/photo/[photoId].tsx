@@ -6,6 +6,7 @@ import getResults from '../../../utils/cachedImages';
 import cloudinary from '../../../utils/cloudinary';
 import getBase64ImageUrl from '../../../utils/generateBlurPlaceholder';
 import type { ImageProps } from '../../../utils/types';
+import SEO from '@/components/SEO';
 
 export async function getStaticPaths() {
   const results = await cloudinary.v2.search
@@ -70,11 +71,12 @@ function Photo({ currentPhoto }) {
 
   return (
     <>
-      <Head>
-        <title>Next.js Conf 2022 Photos</title>
-        <meta property="og:image" content={currentPhotoUrl} />
-        <meta name="twitter:image" content={currentPhotoUrl} />
-      </Head>
+      <SEO
+        title="Asiatips | Ảnh chill Nhật Việt"
+        description="Blog chia sẻ kiến thức và mẹo hay khi sống ở Nhật dành cho người nước ngoài"
+        image="https://www.asiatips.net/card.jpg"
+        url="https://asiatips.net/knowledge"
+      />
       <main className="mx-auto max-w-[1960px] p-4">
         <Carousel currentPhoto={currentPhoto} index={index} />
       </main>
