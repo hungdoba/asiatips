@@ -13,18 +13,20 @@ export default function Modal({
   images: ImageProps[];
   onClose?: () => void;
 }) {
-  let overlayRef = useRef();
+  const overlayRef = useRef(null); // Initialize as null
   const router = useRouter();
 
   const { photoId } = router.query;
-  let index = Number(photoId);
+  const index = Number(photoId);
 
   const [direction, setDirection] = useState(0);
   const [curIndex, setCurIndex] = useState(index);
 
   function handleClose() {
     router.push('/gallery', undefined, { shallow: true });
-    onClose();
+    if (onClose && typeof onClose === 'function') {
+      onClose();
+    }
   }
 
   function changePhotoId(newVal: number) {
@@ -64,7 +66,7 @@ export default function Modal({
       className="fixed inset-0 z-10 flex items-center justify-center"
     >
       <Dialog.Overlay
-        ref={overlayRef}
+        ref={overlayRef} // Use ref directly
         as={motion.div}
         key="backdrop"
         className="fixed inset-0 z-30 bg-black/70 backdrop-blur-2xl"

@@ -27,8 +27,10 @@ export default function SharedModal({
 }: SharedModalProps) {
   const [loaded, setLoaded] = useState(false);
 
-  let filteredImages = images?.filter((img: ImageProps) =>
-    range(index - 15, index + 15).includes(img.id)
+  let filteredImages = images?.filter(
+    (img: ImageProps | undefined) =>
+      img &&
+      range(index - 15, index + 15).some((rangeValue) => rangeValue === img.id)
   );
 
   const handlers = useSwipeable({
@@ -119,7 +121,7 @@ export default function SharedModal({
               <div className="absolute top-0 right-0 flex items-center gap-2 p-3 text-white">
                 {navigation ? (
                   <a
-                    href={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/${currentImage.public_id}.${currentImage.format}`}
+                    href={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/${currentImage?.public_id}.${currentImage?.format}`}
                     className="rounded-full bg-black/50 p-2 text-white/75 backdrop-blur-lg transition hover:bg-black/75 hover:text-white"
                     target="_blank"
                     title="Open fullsize version"
@@ -141,7 +143,7 @@ export default function SharedModal({
                 <button
                   onClick={() =>
                     downloadPhoto(
-                      `https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/${currentImage.public_id}.${currentImage.format}`,
+                      `https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/${currentImage?.public_id}.${currentImage?.format}`,
                       `${index}.jpg`
                     )
                   }
@@ -173,7 +175,7 @@ export default function SharedModal({
                 className="mx-auto mt-6 mb-6 flex aspect-[3/2] h-14"
               >
                 <AnimatePresence initial={false}>
-                  {filteredImages.map(({ public_id, format, id }) => (
+                  {filteredImages?.map(({ public_id, format, id }) => (
                     <motion.button
                       initial={{
                         width: '0%',
@@ -192,7 +194,7 @@ export default function SharedModal({
                           ? 'z-20 rounded-md shadow shadow-black/50'
                           : 'z-10'
                       } ${id === 0 ? 'rounded-l-md' : ''} ${
-                        id === images.length - 1 ? 'rounded-r-md' : ''
+                        images && id === images.length - 1 ? 'rounded-r-md' : ''
                       } relative inline-block w-full shrink-0 transform-gpu overflow-hidden focus:outline-none`}
                     >
                       <Image
