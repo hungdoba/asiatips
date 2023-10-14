@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -9,6 +8,7 @@ import getBase64ImageUrl from '../../utils/generateBlurPlaceholder';
 import type { ImageProps } from '../../utils/types';
 import { useLastViewedPhoto } from '../../utils/useLastViewedPhoto';
 import Navbar from '@/components/Navbar';
+import SEO from '@/components/SEO';
 
 export async function getStaticProps() {
   const results = await cloudinary.v2.search
@@ -63,17 +63,12 @@ function Gallery({ images }) {
 
   return (
     <>
-      <Head>
-        <title>Next.js Conf 2022 Photos</title>
-        <meta
-          property="og:image"
-          content="https://nextjsconf-pics.vercel.app/og-image.png"
-        />
-        <meta
-          name="twitter:image"
-          content="https://nextjsconf-pics.vercel.app/og-image.png"
-        />
-      </Head>
+      <SEO
+        title="Asiatips | Ảnh chill Nhật Việt"
+        description="Blog chia sẻ kiến thức và mẹo hay khi sống ở Nhật dành cho người nước ngoài"
+        image="https://www.asiatips.net/card.jpg"
+        url="https://asiatips.net/knowledge"
+      />
       <Navbar />
       <main className="mx-auto max-w-[1960px] p-4">
         {photoId && (
