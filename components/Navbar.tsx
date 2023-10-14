@@ -91,6 +91,14 @@ export default function Navbar() {
               <li>
                 <Link
                   className="inline-block no-underline  hover:text-green-900 py-2 md:pl-16"
+                  href="/gallery"
+                >
+                  Ảnh chill
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="inline-block no-underline  hover:text-green-900 py-2 md:pl-16"
                   href="/about"
                 >
                   Giới thiệu

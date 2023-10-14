@@ -10,7 +10,12 @@ const nextConfig = {
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
   reactStrictMode: true,
   images: {
-    domains: ['localhost', 's3.ap-northeast-1.amazonaws.com'],
+    formats: ['image/avif', 'image/webp'],
+    domains: [
+      'localhost',
+      's3.ap-northeast-1.amazonaws.com',
+      'res.cloudinary.com',
+    ],
   },
   i18n: {
     locales: ['en', 'vi'],
