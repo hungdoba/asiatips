@@ -51,22 +51,31 @@ export default function MarkdownControl({
       const filename = encodeURIComponent(file.name);
       const fileType = encodeURIComponent(file.type);
 
-      const res = await fetch(
-        `/api/upload-aws?file=${filename}&fileType=${fileType}`
-      );
-      const { url, fields } = await res.json();
-      const formData = new FormData();
+      try {
+        const res = await fetch(
+          `/api/upload-aws?file=${filename}&fileType=${fileType}`
+        );
 
-      Object.entries({ ...fields, file }).forEach(([key, value]) => {
-        formData.append(key, value as string);
-      });
+        if (!res.ok) {
+          throw new Error(`Failed to fetch upload data. Status: ${res.status}`);
+        }
 
-      const upload = await fetch(url, {
-        method: 'POST',
-        body: formData,
-      });
+        const { url, fields } = await res.json();
+        const formData = new FormData();
 
-      if (upload.ok) {
+        Object.entries({ ...fields, file }).forEach(([key, value]) => {
+          formData.append(key, value as string);
+        });
+
+        const upload = await fetch(url, {
+          method: 'POST',
+          body: formData,
+        });
+
+        if (!upload.ok) {
+          throw new Error(`Failed to upload file. Status: ${upload.status}`);
+        }
+
         console.log('Uploaded successfully!');
         const finalImageUrl = `${url}/${fields.key}`;
         const newInformation = {
@@ -75,11 +84,13 @@ export default function MarkdownControl({
         };
         setInformation(newInformation);
         onInformationChange(newInformation);
-      } else {
+
+        if (fileInputRef.current) {
+          fileInputRef.current.value = '';
+        }
+      } catch (error) {
+        console.error('Error during upload:', error);
         alert('Upload failed.');
-      }
-      if (fileInputRef.current) {
-        fileInputRef.current.value = '';
       }
     }
   };
