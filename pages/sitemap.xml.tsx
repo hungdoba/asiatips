@@ -1,4 +1,4 @@
-import { prisma } from '@/db';
+import { prisma } from '@/utils/db';
 import { convert } from '@/utils/categoryToUrl';
 import { post } from '@prisma/client';
 

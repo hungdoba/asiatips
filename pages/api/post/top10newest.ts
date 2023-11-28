@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
-import { prisma } from '@/db';
+import { prisma } from '@/utils/db';
 import { post } from '@prisma/client';
 
 export default async function top10newest(

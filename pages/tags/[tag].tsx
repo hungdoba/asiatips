@@ -1,5 +1,5 @@
 import { GetStaticPaths } from 'next';
-import { prisma } from '@/db';
+import { prisma } from '@/utils/db';
 import { post } from '@prisma/client';
 import Aboutme from '@/components/overview/Aboutme';
 import Subscribe from '@/components/common/Subscribe';

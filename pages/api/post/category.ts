@@ -1,4 +1,4 @@
-import { prisma } from '@/db';
+import { prisma } from '@/utils/db';
 import { NextApiRequest, NextApiResponse } from 'next';
 
 export default async function category(

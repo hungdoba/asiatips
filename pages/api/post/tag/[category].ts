@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-import { prisma } from '@/db';
+import { prisma } from '@/utils/db';
 import { convert } from '@/utils/categoryToUrl';
 
 export default async function Project(

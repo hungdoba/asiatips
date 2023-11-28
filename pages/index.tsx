@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { prisma } from '@/db';
+import { prisma } from '@/utils/db';
 import SEO from '@/components/layout/SEO';
 import Tags from '@/components/common/Tags';
 import { post } from '@prisma/client';

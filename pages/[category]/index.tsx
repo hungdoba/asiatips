@@ -1,4 +1,4 @@
-import { prisma } from '@/db';
+import { prisma } from '@/utils/db';
 import { post } from '@prisma/client';
 import { useEffect, useState } from 'react';
 import Subscribe from '@/components/common/Subscribe';

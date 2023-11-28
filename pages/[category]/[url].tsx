@@ -1,4 +1,4 @@
-import { prisma } from '@/db';
+import { prisma } from '@/utils/db';
 import { serialize } from 'next-mdx-remote/serialize';
 
 import matter from 'gray-matter';
