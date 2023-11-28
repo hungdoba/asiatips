@@ -1,6 +1,6 @@
-import SEO from '@/components/SEO';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+import SEO from '@/components/layout/SEO';
+import Navbar from '@/components/layout/Navbar';
+import Footer from '@/components/layout/Footer';
 import Image from 'next/image';
 
 export default function About() {

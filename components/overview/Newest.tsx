@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 import { post } from '@prisma/client';
-import PostCard from '@/components/PostCard';
+import PostCard from '@/components/overview/PostCard';
 
-export default function Top10Newest() {
+export default function Newest() {
   const [relatedPosts, setRelatedPosts] = useState<post[]>([]);
 
   useEffect(() => {
     const fetchNewestPosts = async () => {
-      const response = await fetch('/api/post/top10newest');
+      const response = await fetch('/api/post/newest');
       const data = await response.json();
       setRelatedPosts(data);
     };
@@ -17,7 +17,7 @@ export default function Top10Newest() {
     <div className="w-full mt-8">
       <div>
         <h2 className="mb-2 text-3xl font-bold text-gray-900">
-          Recently posted
+          Bài viết mới nhất
         </h2>
         <hr className="mb-4" />
 

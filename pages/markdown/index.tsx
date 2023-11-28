@@ -9,7 +9,7 @@ const SimpleMdeReact = dynamic(() => import('react-simplemde-editor'), {
 });
 import 'easymde/dist/easymde.min.css';
 import EasyMDE from 'easymde';
-import MarkdownControl from '@/components/MarkdownControl';
+import MarkdownControl from '@/components/overview/MarkdownControl';
 import { ArticleInfoType } from '@/utils/types';
 
 export default function MarkdownCreate() {

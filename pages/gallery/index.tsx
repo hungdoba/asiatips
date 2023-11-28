@@ -2,13 +2,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useRef } from 'react';
-import Modal from '../../components/Modal';
+import Modal from '../../components/common/Modal';
 import cloudinary from '../../utils/cloudinary';
 import getBase64ImageUrl from '../../utils/generateBlurPlaceholder';
 import type { ImageProps } from '../../utils/types';
 import { useLastViewedPhoto } from '../../utils/useLastViewedPhoto';
-import Navbar from '@/components/Navbar';
-import SEO from '@/components/SEO';
+import Navbar from '@/components/layout/Navbar';
+import SEO from '@/components/layout/SEO';
 
 export async function getStaticProps() {
   const results = await cloudinary.v2.search

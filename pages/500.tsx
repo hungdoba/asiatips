@@ -1,5 +1,5 @@
-import SEO from '@/components/SEO';
-import Navbar from '@/components/Navbar';
+import SEO from '@/components/layout/SEO';
+import Navbar from '@/components/layout/Navbar';
 
 export default function About() {
   return (

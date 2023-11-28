@@ -1,14 +1,14 @@
 import { prisma } from '@/db';
 import { post } from '@prisma/client';
 import { useEffect, useState } from 'react';
-import Subscribe from '@/components/Subscribe';
+import Subscribe from '@/components/common/Subscribe';
 
-import SEO from '@/components/SEO';
-import Tags from '@/components/Tags';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import PostCard from '@/components/PostCard';
-import Aboutme from '@/components/Aboutme';
+import SEO from '@/components/layout/SEO';
+import Tags from '@/components/common/Tags';
+import Navbar from '@/components/layout/Navbar';
+import Footer from '@/components/layout/Footer';
+import PostCard from '@/components/overview/PostCard';
+import Aboutme from '@/components/overview/Aboutme';
 import { useSession } from 'next-auth/react';
 import Link from 'next/link';
 import { convert } from '@/utils/categoryToUrl';

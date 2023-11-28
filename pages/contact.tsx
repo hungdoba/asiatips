@@ -1,10 +1,10 @@
 import Link from 'next/link';
-import SEO from '@/components/SEO';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+import SEO from '@/components/layout/SEO';
+import Navbar from '@/components/layout/Navbar';
+import Footer from '@/components/layout/Footer';
 import { useState } from 'react';
-import SocialMedia from '@/components/SocialMedia';
-import Alert from '@/components/Alert';
+import SocialMedia from '@/components/overview/SocialMedia';
+import Alert from '@/components/common/Alert';
 
 export default function Contact() {
   const [name, setName] = useState<string>('');

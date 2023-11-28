@@ -1,13 +1,13 @@
 import Image from 'next/image';
-import SEO from '@/components/SEO';
-import Tags from '@/components/Tags';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+import SEO from '@/components/layout/SEO';
+import Tags from '@/components/common/Tags';
+import Navbar from '@/components/layout/Navbar';
+import Footer from '@/components/layout/Footer';
 import { MDXRemote } from 'next-mdx-remote';
-import PostCard from '@/components/PostCard';
+import PostCard from '@/components/overview/PostCard';
 import { Fragment, useEffect, useState } from 'react';
 import { post } from '@prisma/client';
-import Breadcrumb from './Breadcrumb';
+import Breadcrumb from '../common/Breadcrumb';
 
 export default function Article({ data, content, post }) {
   const [relatedPost, setRelatedPost] = useState<post[]>([]);

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import SocialMedia from './SocialMedia';
+import SocialMedia from '../overview/SocialMedia';
 import Alert from './Alert';
 
 export default function Subscribe() {

@@ -8,7 +8,7 @@ import remarkToc from 'remark-toc';
 import remarkEmoji from 'remark-emoji';
 import remarkImages from 'remark-images';
 
-import Review from '@/components/Review';
+import Review from '@/components/overview/Review';
 import rehypeHighlight from 'rehype-highlight';
 import rehypeAutolinkHeadings from 'remark-autolink-headings';
 import slugify from 'slugify';

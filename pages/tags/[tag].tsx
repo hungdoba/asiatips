@@ -1,14 +1,14 @@
 import { GetStaticPaths } from 'next';
 import { prisma } from '@/db';
 import { post } from '@prisma/client';
-import Aboutme from '@/components/Aboutme';
-import Subscribe from '@/components/Subscribe';
+import Aboutme from '@/components/overview/Aboutme';
+import Subscribe from '@/components/common/Subscribe';
 
-import SEO from '@/components/SEO';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import PostCard from '@/components/PostCard';
-import Tags from '@/components/Tags';
+import SEO from '@/components/layout/SEO';
+import Navbar from '@/components/layout/Navbar';
+import Footer from '@/components/layout/Footer';
+import PostCard from '@/components/overview/PostCard';
+import Tags from '@/components/common/Tags';
 
 type Props = {
   posts: post[];

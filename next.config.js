@@ -17,10 +17,6 @@ const nextConfig = {
       'res.cloudinary.com',
     ],
   },
-  i18n: {
-    locales: ['en', 'vi'],
-    defaultLocale: 'en',
-  },
 };
 
 module.exports = withMDX(nextConfig);

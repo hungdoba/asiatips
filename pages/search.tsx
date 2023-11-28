@@ -2,12 +2,12 @@ import { post } from '@prisma/client';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
-import SEO from '@/components/SEO';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import Aboutme from '@/components/Aboutme';
-import PostCard from '@/components/PostCard';
-import Subscribe from '@/components/Subscribe';
+import SEO from '@/components/layout/SEO';
+import Navbar from '@/components/layout/Navbar';
+import Footer from '@/components/layout/Footer';
+import Aboutme from '@/components/overview/Aboutme';
+import PostCard from '@/components/overview/PostCard';
+import Subscribe from '@/components/common/Subscribe';
 
 export default function SearchPage() {
   const router = useRouter();

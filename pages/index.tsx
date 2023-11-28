@@ -1,42 +1,14 @@
 import Link from 'next/link';
 import { prisma } from '@/db';
-import SEO from '@/components/SEO';
-import Tags from '@/components/Tags';
+import SEO from '@/components/layout/SEO';
+import Tags from '@/components/common/Tags';
 import { post } from '@prisma/client';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import Aboutme from '@/components/Aboutme';
+import Navbar from '@/components/layout/Navbar';
+import Footer from '@/components/layout/Footer';
+import Aboutme from '@/components/overview/Aboutme';
 import { getSession, useSession } from 'next-auth/react';
-import PostCard from '@/components/PostCard';
-import Subscribe from '@/components/Subscribe';
-
-// export const getStaticProps = async () => {
-//   const posts = await prisma.post.findMany({
-//     orderBy: [{ created_at: 'asc' }],
-//     select: {
-//       url: true,
-//       category: true,
-//       brief: true,
-//       title: true,
-//       image: true,
-//       tags: true,
-//       created_at: true,
-//       active: true,
-//     },
-//   });
-
-//   const serializedPosts = posts.map((post) => ({
-//     ...post,
-//     created_at: post.created_at?.toISOString(),
-//   }));
-
-//   return {
-//     props: {
-//       posts: serializedPosts,
-//     },
-//     revalidate: 60 * 60, // 1 hour
-//   };
-// };
+import PostCard from '@/components/overview/PostCard';
+import Subscribe from '@/components/common/Subscribe';
 
 export async function getServerSideProps(context) {
   const session = await getSession(context);

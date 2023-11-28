@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import Tags from './Tags';
+import Tags from './common/Tags';
 import { post } from '@prisma/client';
 
 const NewestCard: React.FC<{ post: post }> = ({ post }) => {

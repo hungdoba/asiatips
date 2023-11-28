@@ -1,27 +1,27 @@
-import Tags from './Tags';
+import Tags from '../common/Tags';
 import Image from 'next/image';
 import Aboutme from './Aboutme';
-import Subscribe from './Subscribe';
-import SEO from '@/components/SEO';
+import Subscribe from '../common/Subscribe';
+import SEO from '@/components/layout/SEO';
 import SocialMedia from './SocialMedia';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+import Navbar from '@/components/layout/Navbar';
+import Footer from '@/components/layout/Footer';
 import { MDXRemote } from 'next-mdx-remote';
-import TableOfContents from './TableOfContents';
+import TableOfContents from '../TableOfContents';
 import { Fragment, useEffect, useState } from 'react';
 
 // Components of MDXRemote
-import YouTube from './article/YouTube';
-import Top10Newest from './Top10Newest';
-import AlertRed from './article/alert/red';
-import UnderRed from './article/underline/red';
-import AlertGreen from './article/alert/green';
-import AlertYellow from './article/alert/yellow';
-import UnderGreen from './article/underline/green';
-import ButtonOrange from './article/button/orange';
-import UnderYellow from './article/underline/yellow';
-import ButtonPinkOrange from './article/button/pinkOrange';
-import ButtonPurplePink from '././article/button/purplePink';
+import YouTube from '../article/YouTube';
+import Top10Newest from '../Top10Newest';
+import AlertRed from '../article/alert/red';
+import UnderRed from '../article/underline/red';
+import AlertGreen from '../article/alert/green';
+import AlertYellow from '../article/alert/yellow';
+import UnderGreen from '../article/underline/green';
+import ButtonOrange from '../article/button/orange';
+import UnderYellow from '../article/underline/yellow';
+import ButtonPinkOrange from '../article/button/pinkOrange';
+import ButtonPurplePink from '../article/button/purplePink';
 import { convert } from '@/utils/categoryToUrl';
 
 export default function Article({ tableOfContents, content, post }) {
